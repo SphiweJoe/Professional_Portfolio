@@ -1,0 +1,10 @@
+/* styles.css */
+.image_adjust {
+    width: 100%;           /* Adjusts the width to 100% of the parent container */
+    height: auto;          /* Maintains the aspect ratio */
+    max-width: 500px;      /* Limits the width to a maximum of 500px */
+    border-radius: 8px;    /* Rounds the corners of the image */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds shadow */
+    display: block;        /* Ensures the image behaves like a block-level element */
+    margin: 20px auto;     /* Centers the image and adds margin */
+}
