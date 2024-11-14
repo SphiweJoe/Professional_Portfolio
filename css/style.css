@@ -108,14 +108,28 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+input, textarea {
+  width: 100%;
+  background-color: #cac4c4;
+  padding: 8px 16px 8px 16px ;
+  border-style: solid;
+  color: #0e0b0b;
+}
+
 /* line 68, ../../Arafath/CL/Cl November/228. Resume-02/HTML/scss/theme-default.scss */
 label {
   color: #7e7e7e;
   cursor: pointer;
   font-size: 14px;
   font-weight: 400;
+  color: #000;
+  display: block;
+  margin: 16px 0 16px 0;
 }
 
+textarea {
+  height: 280px;
+}
 /* line 74, ../../Arafath/CL/Cl November/228. Resume-02/HTML/scss/theme-default.scss */
 *::-moz-selection {
   background: #444;
