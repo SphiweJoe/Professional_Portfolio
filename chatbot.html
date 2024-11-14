@@ -42,42 +42,42 @@
         }
 
         .chat-window .user-message {
-            background-color: #e0f7fa;
+            background-color: #a8a49f;
             align-self: flex-start;
         }
 
         .chat-window .bot-message {
-            background-color: #ffeb3b;
+            background-color: #c5c4b8;
             align-self: flex-end;
         }
 
         .chat-input-container {
             display: flex;
             padding: 10px;
-            border-top: 1px solid #ddd;
-            background-color: #fff;
+            border-top: 1px solid #0e0c0c;
+            background-color: #834623;
         }
 
         .chat-input {
             width: 100%;
             padding: 10px;
             font-size: 16px;
-            border: 1px solid #ddd;
+            border: 1px solid #080808;
             border-radius: 5px;
             margin-right: 10px;
         }
 
         .send-btn {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
+            background-color: #c4c1b3;
+            color: rgb(104, 57, 36);
+            border: solid;
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
         }
 
         .send-btn:hover {
-            background-color: #45a049;
+            background-color: #8b4811;
         }
     </style>
 </head>
@@ -139,6 +139,7 @@
             document.getElementById('user-input').value = '';
 
             // Simulate bot response (you can customize this part with actual logic)
+            //Add more content for bot responses
             setTimeout(function() {
                 var botMessageDiv = document.createElement('div');
                 botMessageDiv.classList.add('message', 'bot-message');
