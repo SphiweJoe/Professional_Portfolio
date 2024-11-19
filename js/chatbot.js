@@ -1,47 +1,54 @@
-// script.js
-
-// Function to send user message
-function sendMessage() {
-    const userInput = document.getElementById("user-input").value;
-    if (userInput.trim() === "") {
-        return; // Don't send empty messages
-    }
-
-    // Display user's message
-    const userMessage = document.createElement("div");
-    userMessage.classList.add("message", "user-message");
-    userMessage.textContent = userInput;
-    document.getElementById("chatbox-content").appendChild(userMessage);
-
+// Function to open the chat
+function openChat() {
+    document.getElementById("chatPopup").style.display = "flex";
+    document.getElementById("userInput").focus();  // Focus on input when opened
+  }
+  
+  // Function to close the chat
+  function closeChat() {
+    document.getElementById("chatPopup").style.display = "none";
+  }
+  
+  // Function to handle user message sending
+  function sendMessage(event) {
+    if (event.type === "keydown" && event.key !== "Enter") return; // Only respond to Enter key
+    
+    const inputField = document.getElementById("userInput");
+    const userMessage = inputField.value.trim();
+    if (userMessage === "") return;
+  
+    // Append user's message to the chat content
+    appendMessage(userMessage, 'user');
+  
+    // Simulate bot response with a simple delay
+    setTimeout(() => {
+      const botResponse = getBotResponse(userMessage);
+      appendMessage(botResponse, 'bot');
+    }, 1000);
+  
     // Clear the input field
-    document.getElementById("user-input").value = "";
-
-    // Generate bot response after a delay
-    setTimeout(function () {
-        const botResponse = getBotResponse(userInput);
-        const botMessage = document.createElement("div");
-        botMessage.classList.add("message", "bot-message");
-        botMessage.textContent = botResponse;
-        document.getElementById("chatbox-content").appendChild(botMessage);
-
-        // Scroll to the bottom of the chat window
-        document.getElementById("chatbox-content").scrollTop = document.getElementById("chatbox-content").scrollHeight;
-    }, 500); // delay for effect
-}
-
-// Function to generate custom bot responses
-function getBotResponse(input) {
-    const normalizedInput = input.toLowerCase().trim();
-
-    if (normalizedInput.includes("hello")) {
-        return "Hi there! How can I assist you today?";
-    } else if (normalizedInput.includes("how are you")) {
-        return "I'm just a bot, but I'm doing great! How about you?";
-    } else if (normalizedInput.includes("name")) {
-        return "I am your friendly chatbot!";
-    } else if (normalizedInput.includes("bye")) {
-        return "Goodbye! Have a great day!";
+    inputField.value = '';
+  }
+  
+  // Function to append messages (either user or bot)
+  function appendMessage(message, sender) {
+    const chatContent = document.getElementById("chatContent");
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+    messageDiv.textContent = message;
+    chatContent.appendChild(messageDiv);
+    chatContent.scrollTop = chatContent.scrollHeight; // Scroll to the latest message
+  }
+  
+  // Simple bot response logic
+  function getBotResponse(userMessage) {
+    const lowerMessage = userMessage.toLowerCase();
+    if (lowerMessage.includes("hello")) {
+      return "Hi there! How can I help you today?";
+    } else if (lowerMessage.includes("help")) {
+      return "Sure! What do you need help with?";
     } else {
-        return "Sorry, I didn't quite understand that. Could you try again?";
+      return "Sorry, I didn't understand that. Can you rephrase?";
     }
-}
+  }
+  

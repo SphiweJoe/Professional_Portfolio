@@ -1,6 +1,15 @@
 .profile_picture {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    width: 480px;
+    height: 480px;
+    border-radius: 10%;
     object-fit: cover;
+    justify-content: center; 
+    align-items: center;    
+}
+
+.logo_page {
+    width: 350px;
+    height: 120px;
+    transition: transform 0.3s ease-in-out; 
+    text-align: left;
 }
