@@ -1,9 +1,9 @@
 .profile_picture {
-    width: 80vh;
-    height: 80vh;
+    width: 50vh;
+    height: 45vh;
     border-radius: 10%;
     object-fit: cover;
-    justify-content: center; 
+    justify-content: right; 
     align-items: center;    
 }
 
