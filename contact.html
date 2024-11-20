@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="css/slicknav.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="images.css">
+    <link rel="stylesheet" href="/css/chatbot.css">
+
 
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
@@ -57,17 +59,16 @@
                               </div>
                           </div>
 
-                          <!--Chatbot btn-->
-      <div class="col-xl-3 col-lg-3 d-none d-lg-block">
-          <div class="Appointment">
-              <div class="book_btn d-none d-lg-block">
-                  <!--Link for Chatbot page-->
-
-                  <a href="chatbot.html"> Live Chat</a>
-                  </a>
-              </div>
-          </div>
-      </div>
+                          <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <div class="book_btn d-none d-lg-block">
+                                    <!--Link for CV download page-->
+                
+                                    <a href="file_doc/Sphiwe_CV.pdf" download="YourFile.pdf">Download CV</a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
 
                           <div class="col-12">
                               <div class="mobile_menu d-block d-lg-none"></div>
@@ -179,93 +180,128 @@
   </section>
   <!-- ================ contact section end ================= -->
 
-<!-- footer start -->
-<footer class="footer">
-  <div class="footer_top">
-      <div class="container">
-          <div class="row">
-              <div class="col-lg-8">
-                  <div class="lets_talk"       display: flex; flex-wrap: wrap; gap: 20px;>
-                      <h3>Lets collaborate more on the social platforms </h3>
-          
-                      <p>Send me a message, I will reach out to you soonest, <span>I like a challenge and bringing a solution focused mindset</span></p>
+    <!-- footer start -->
+    <footer class="footer">
+      <div class="footer_top">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8">
+                      <div class="lets_talk">
+                          <h3>Do you have any Project? <a href="contact.html">Let us collaborate</a> </h3>
+                          <!--To add a send a message/leave your details content-->
+                          <p>Send me a message and I will reach out to you soonest, I like a challenge and bringing a solution focused mindset</p>
+                      </div>
                   </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-3 ">
+                      <div class="single_links d-flex justify-content-between align-items-center">
+                          <a href="https://stackoverflow.com/">
+                              <span>Stack Overflow</span></i>
+                          </a>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="single_links d-flex justify-content-between align-items-center">
+                          <a href="https://dev.to/"><span>Dev.to</span></a>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="single_links d-flex justify-content-between align-items-center">
+                          <a href="https://github.com/SphiweJoe"><span>GitHub Profile </span></a>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+                      <div class="single_links d-flex justify-content-between align-items-center">
+                          
+                          <a href="https://www.linkedin.com/in/sphiwe-masilela1214/"><span>Linkedin Profile</span></a>
+                      </div>
+                  </div>
+              </div>
+              
+          <!--Chatbot btn-->
+          <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+              <div class="Appointment">
+                  <div class="book_btn d-none d-lg-block">
+                   <!-- Button to Open Chatbot -->
+                   <button class="open-btn" onclick="openChat()">Open Chat</button>
+                      <!-- Chatbot Popup Window -->
+                      <div class="chat-popup" id="chatPopup">
+                          <div class="chat-header">
+                          <span class="chat-title">Chat with Us</span>
+                          <button class="close-btn" onclick="closeChat()">X</button>
+                          </div>
+                          <div class="chat-content" id="chatContent">
+                          <!-- Chat messages will appear here -->
+                          </div>
+                          <div class="chat-input">
+                          <input type="text" id="userInput" placeholder="Type a message..." onkeydown="sendMessage(event)">
+                          <button onclick="sendMessage()">Send</button>
+                          </div>
+                      </div>
+                      </a>
               </div>
           </div>
-          <div class="row">
-              <div class="col-md-3">
-                  <div class="single_links d-flex justify-content-between align-items-center">
-                      <span>Stack Overflow</span>
-                      <a href="https://stackoverflow.com/"> <i class="fa fa-stack_flow"></i> </a>
-                  </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="single_links d-flex justify-content-between align-items-center">
-                      <span>Dev.to</span>
-                      <a href="https://dev.to/"> <i class="fa fa-Dev.to"></i> </a>
-                  </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="single_links d-flex justify-content-between align-items-center">
-                      <span>GitHub Profile</span>
-                      <a href="https://github.com/SphiweJoe"> <i class="fa fa-github"></i> </a>
-                  </div>
-              </div>
-              <div class="col-md-3">
-                  <div class="single_links d-flex justify-content-between align-items-center">
-                      <span>Linkedin Profile</span>
-                      <a href="https://www.linkedin.com/in/sphiwe-masilela1214/"> <i class="fa fa-linkedin"></i> </a>
+
                   </div>
               </div>
           </div>
       </div>
-  </div>
-  <div class="copy-right_text">
-      <div class="container">
-          <div class="footer_border"></div>
-          <div class="row">
-              <div class="col-xl-12">
-                  <p class="copy_right text-center">
-<!--Copy right tag-->>
-                      Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Sphiwe Masilela</a>
-                  </p>
+
+      <div class="copy-right_text">
+          <div class="container">
+              <div class="footer_border"></div>
+              <div class="row">
+                  <div class="col-xl-12">
+                      <p class="copy_right text-center">
+<!--Copy right tag-->
+                          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Sphiwe Masilela</a>
+                      </p>
+                  </div>
               </div>
           </div>
       </div>
-  </div>
-</footer>
-<!--/ footer end  -->
+  </footer>
+  <!--/ footer end  -->
 
 
 
-  <!-- JS here -->
-  <script src="js/vendor/modernizr-3.5.0.min.js"></script>
-  <script src="js/vendor/jquery-1.12.4.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/isotope.pkgd.min.js"></script>
-  <script src="js/ajax-form.js"></script>
-  <script src="js/waypoints.min.js"></script>
-  <script src="js/jquery.counterup.min.js"></script>
-  <script src="js/imagesloaded.pkgd.min.js"></script>
-  <script src="js/scrollIt.js"></script>
-  <script src="js/jquery.scrollUp.min.js"></script>
-  <script src="js/wow.min.js"></script>
-  <script src="js/nice-select.min.js"></script>
-  <script src="js/jquery.slicknav.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/plugins.js"></script>
-  <script src="js/gijgo.min.js"></script>
+ <!-- link that opens popup -->
+ <script src=" https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"> </script>
+ <script src="/js/chatbot.js"></script>
 
-  <!--contact js-->
-  <script src="js/contact.js"></script>
-  <script src="js/jquery.ajaxchimp.min.js"></script>
-  <script src="js/jquery.form.js"></script>
-  <script src="js/jquery.validate.min.js"></script>
-  <script src="js/mail-script.js"></script>
+ <!-- JS here -->
+ <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+ <script src="js/vendor/jquery-1.12.4.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="js/owl.carousel.min.js"></script>
+ <script src="js/isotope.pkgd.min.js"></script>
+ <script src="js/ajax-form.js"></script>
+ <script src="js/waypoints.min.js"></script>
+ <script src="js/jquery.counterup.min.js"></script>
+ <script src="js/imagesloaded.pkgd.min.js"></script>
+ <script src="js/scrollIt.js"></script>
+ <script src="js/jquery.scrollUp.min.js"></script>
+ <script src="js/wow.min.js"></script>
+ <script src="js/nice-select.min.js"></script>
+ <script src="js/jquery.slicknav.min.js"></script>
+ <script src="js/jquery.magnific-popup.min.js"></script>
+ <script src="js/plugins.js"></script>
+ <!-- <script src="js/gijgo.min.js"></script> -->
+ <script src="js/slick.min.js"></script>
 
-  <script src="js/main.js"></script>
+
+
+ <!--contact js-->
+ <script src="js/contact.js"></script>
+ <script src="js/jquery.ajaxchimp.min.js"></script>
+ <script src="js/jquery.form.js"></script>
+ <script src="js/jquery.validate.min.js"></script>
+ <script src="js/mail-script.js"></script>
+
+
+ <script src="js/main.js"></script>
 </body>
 
 </html>
