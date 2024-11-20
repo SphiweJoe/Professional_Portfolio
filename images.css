@@ -1,0 +1,15 @@
+.profile_picture {
+    width: 50vh;
+    height: 45vh;
+    border-radius: 10%;
+    object-fit: cover;
+    justify-content: right; 
+    align-items: center;    
+}
+
+.logo_page {
+    width: 40vh;
+    height: 10vh;
+    transition: transform 0.3s ease-in-out; 
+    text-align: left;
+}
