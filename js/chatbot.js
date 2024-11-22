@@ -50,6 +50,10 @@ sendButton.addEventListener("click", sendMessage);
     {
       return "Hi there! How can I help you today?";
     } 
+    else if (lowerMessage.includes("hi"))
+      {
+        return "Hi there! How can I help you today?";
+      }
     else if (lowerMessage.includes("help"))
      {
       return "Sure! What do you need help with?";
@@ -85,7 +89,7 @@ sendButton.addEventListener("click", sendMessage);
       else if (lowerMessage.includes("why did the chicken cross the road"))
         {
            return "Heeeeey! that is a good one. According to Sphiwe's plot twist: To expand its horizons and explore new opportunities on the other side. However in actual fact, it had to debug the code on the other side.";
-        }
+        }       
     else 
     {
       return "Sorry, I didn't understand that. Can you rephrase? Or navigate to the contac us page for more assistance";
